@@ -1,0 +1,43 @@
+/* ===========================
+   Order Done Page (Netflix Style)
+=========================== */
+
+.order-done-container {
+    text-align: center;
+    padding-top: 80px;
+    color: #ffffff;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.title {
+    font-size: 38px;
+    color: #e50914;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.box {
+    display: inline-block;
+    background: #1f1f1f;
+    padding: 28px 45px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    font-size: 22px;
+    line-height: 1.7;
+    box-shadow: 0 0 18px rgba(0,0,0,0.45);
+}
+
+.home-btn {
+    padding: 12px 28px;
+    background: #e50914;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background .2s ease;
+}
+
+.home-btn:hover {
+    background: #b30710;
+}

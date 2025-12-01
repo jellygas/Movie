@@ -1,0 +1,110 @@
+/* Global */
+body {
+    margin: 0;
+    background-color: #141414;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 40px;
+    background: rgba(0, 0, 0, 0.85);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-item, .logo {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #e50914;
+}
+
+.nav-item:hover {
+    color: #e50914;
+}
+
+/* Page content layout */
+.content {
+    padding: 40px;
+}
+
+/* Movie Grid */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 25px;
+}
+
+.movie-card {
+    text-decoration: none;
+    color: white;
+}
+
+.poster-img {
+    width: 100%;
+    border-radius: 6px;
+    transition: transform .25s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.poster-img:hover {
+    transform: scale(1.07);
+}
+
+/* Titles */
+.section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Forms */
+.center-form {
+    max-width: 350px;
+    margin: auto;
+    background: rgba(0,0,0,0.7);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.center-form input,
+.center-form select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: white;
+}
+
+.btn-red {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #e50914;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.btn-red:hover {
+    background: #f6121d;
+}
+
+.error {
+    color: #ff4f4f;
+    text-align: center;
+}

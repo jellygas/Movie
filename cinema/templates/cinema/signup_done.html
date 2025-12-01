@@ -1,0 +1,17 @@
+{% extends "cinema/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'cinema/css/signup_done.css' %}">
+
+<div class="signup-done-container">
+    <h1>회원가입 완료!</h1>
+
+    <p><strong>{{ name }}</strong>님, 가입을 환영합니다 🎉</p>
+    <p>회원 ID: <strong>{{ member_id }}</strong></p>
+
+    <a href="/">홈으로 돌아가기</a>
+</div>
+
+{% endblock %}

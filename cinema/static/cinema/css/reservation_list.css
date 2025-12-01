@@ -1,0 +1,72 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.reservation-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #e50914;
+    font-weight: 700;
+}
+
+.reservation-card {
+    background-color: #111;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 1px solid #222;
+}
+
+.movie-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.info p {
+    margin: 4px 0;
+    font-size: 15px;
+    color: #ddd;
+}
+
+.cancel-btn {
+    margin-top: 15px;
+    background-color: #e50914;
+    border: none;
+    padding: 10px 16px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.cancel-btn:hover {
+    background-color: #f6121d;
+}
+
+.empty {
+    font-size: 18px;
+    color: #bbb;
+    margin-top: 20px;
+}
+
+.home-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #e50914;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.home-link:hover {
+    text-decoration: underline;
+}

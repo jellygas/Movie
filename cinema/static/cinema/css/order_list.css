@@ -1,0 +1,85 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.history-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #e50914;
+    font-weight: 700;
+}
+
+.order-card {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #222;
+    margin-bottom: 25px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-id {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.order-date {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.order-price {
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.order-details {
+    padding-left: 15px;
+}
+
+.details-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.order-details ul {
+    margin: 0;
+    padding: 0;
+    list-style: disc;
+}
+
+.order-details li {
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.no-order {
+    font-size: 18px;
+    color: #bbb;
+}
+
+.home-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #e50914;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.home-link:hover {
+    text-decoration: underline;
+}

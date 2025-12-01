@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>MovieBox</title>
+
+    <link rel="stylesheet" href="{% static 'cinema/css/netflix.css' %}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/" class="logo">MovieBox</a>
+            <a href="/" class="nav-item">홈</a>
+            <a href="/foods/" class="nav-item">식음료</a>
+
+            {% if request.session.member_id %}
+                <a href="{% url 'reservation_list' request.session.member_id %}" class="nav-item">예약내역</a>
+            {% else %}
+                <a href="/login/" class="nav-item">예약내역</a>
+            {% endif %}
+        </div>
+
+        <div class="nav-right">
+            {% if request.session.member_id %}
+                <span class="welcome">👋 {{ request.session.member_id }}님</span>
+                <a href="/logout/" class="nav-item">로그아웃</a>
+            {% else %}
+                <a href="/login/" class="nav-item">로그인</a>
+                <a href="/signup/" class="nav-item">회원가입</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

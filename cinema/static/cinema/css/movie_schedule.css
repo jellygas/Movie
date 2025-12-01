@@ -1,0 +1,84 @@
+/* ==============================
+   Movie Schedule (Netflix Style)
+============================== */
+
+.schedule-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.schedule-card {
+    background: #181818;
+    padding: 18px 22px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform .2s ease, box-shadow .25s ease;
+}
+
+.schedule-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 18px rgba(255, 0, 0, 0.35);
+}
+
+.schedule-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.datetime {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.theater {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin-top: 3px;
+}
+
+.reserve-btn {
+    background: #e50914;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background .2s;
+}
+
+.reserve-btn:hover {
+    background: #f6121d;
+}
+
+.empty {
+    color: #cccccc;
+    margin-top: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    color: #ffffff;
+}

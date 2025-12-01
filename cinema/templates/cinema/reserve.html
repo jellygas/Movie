@@ -1,0 +1,50 @@
+{% extends "cinema/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'cinema/css/reserve.css' %}">
+
+<div class="reserve-container">
+    <h1 class="reserve-title">🎟️ 예매하기</h1>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <div class="reserve-info">
+        <p><strong>영화:</strong> {{ schedule.movie.title }}</p>
+        <p><strong>상영관:</strong> {{ schedule.theater.name }}</p>
+        <p><strong>일시:</strong> {{ schedule.date }} {{ schedule.time }}</p>
+    </div>
+
+    <form method="post" class="reserve-form">
+        {% csrf_token %}
+
+        <p class="seat-title">좌석 선택</p>
+
+        <div class="seat-grid">
+        {% for s in seats %}
+            {% if s in reserved_seats %}
+                <!-- 이미 예약된 좌석 -->
+                <label class="seat disabled">
+                    <input type="radio" disabled>
+                    <span>{{ s }} (예약됨)</span>
+                </label>
+            {% else %}
+                <!-- 선택 가능한 좌석 -->
+                <label class="seat">
+                    <input type="radio" name="seat" value="{{ s }}">
+                    <span>{{ s }}</span>
+                </label>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <button type="submit" class="reserve-btn">예매하기</button>
+    </form>
+
+    <a href="{% url 'movie_schedule' schedule.movie.movie_id %}" class="back-link">← 스케줄로 돌아가기</a>
+</div>
+
+{% endblock %}

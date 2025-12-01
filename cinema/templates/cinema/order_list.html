@@ -1,0 +1,42 @@
+{% extends "cinema/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'cinema/css/order_list.css' %}">
+
+<div class="history-container">
+
+    <h1 class="title">{{ member.name }}님의 주문 내역</h1>
+
+    {% if orders %}
+        {% for o in orders %}
+        <div class="order-card">
+            <div class="order-header">
+                <span class="order-id">주문번호: {{ o.order_id }}</span>
+                <span class="order-date">{{ o.date }}</span>
+            </div>
+
+            <div class="order-price">
+                총 금액: {{ o.total_price }}원
+            </div>
+
+            <div class="order-details">
+                <p class="details-title">주문 상세</p>
+                <ul>
+                    {% for d in o.orderdetail_set.all %}
+                        <li>{{ d.food.name }} — {{ d.quantity }}개 ({{ d.food.price }}원)</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-order">주문 내역이 없습니다.</p>
+    {% endif %}
+
+    <a href="/" class="home-link">← 홈으로 돌아가기</a>
+
+</div>
+
+{% endblock %}

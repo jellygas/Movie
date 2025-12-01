@@ -1,0 +1,80 @@
+/* ------------------------------
+     Movie Detail Page Styles
+------------------------------ */
+
+.movie-detail-container {
+    background: #000;
+    color: #fff;
+    padding: 40px;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.movie-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.movie-title {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.movie-poster-box {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.movie-poster {
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+.movie-info {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #141414;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.25);
+    font-size: 18px;
+}
+
+.movie-info p {
+    margin: 10px 0;
+}
+
+.movie-actions {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-schedule,
+.btn-back {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.btn-schedule {
+    background: #e50914;
+    color: #fff;
+}
+
+.btn-schedule:hover {
+    background: #f6121d;
+}
+
+.btn-back {
+    background: #333;
+    color: #fff;
+}
+
+.btn-back:hover {
+    background: #555;
+}

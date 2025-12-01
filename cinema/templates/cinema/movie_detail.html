@@ -1,0 +1,39 @@
+{% extends "cinema/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="movie-detail-container">
+
+  <div class="movie-header">
+    <h1 class="movie-title">{{ movie.title }}</h1>
+  </div>
+
+  <!-- 🔥 영화 포스터 -->
+  <div class="movie-poster-box">
+      <img src="{{ movie.poster }}" 
+           alt="{{ movie.title }} 포스터" 
+           class="movie-poster">
+  </div>
+
+  <div class="movie-info">
+    <p><strong>장르:</strong> {{ movie.genre }}</p>
+    <p><strong>상영시간:</strong> {{ movie.running_time }}분</p>
+    <p><strong>관람등급:</strong> {{ movie.rating }}</p>
+    <p><strong>가격:</strong> {{ movie.price }}원</p>
+  </div>
+
+  <div class="movie-actions">
+    <a class="btn-schedule" href="{% url 'movie_schedule' movie.movie_id %}">
+       상영 스케줄 보기
+    </a>
+
+    <a class="btn-back" href="/">
+       ← 목록으로 돌아가기
+    </a>
+  </div>
+
+</div>
+
+<link rel="stylesheet" href="{% static 'cinema/css/movie_detail.css' %}">
+{% endblock %}

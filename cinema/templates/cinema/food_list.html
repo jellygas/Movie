@@ -1,0 +1,31 @@
+{% extends "cinema/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1 class="section-title">🍿 식음료 메뉴</h1>
+
+<div class="container" style="max-width:900px; margin:auto;">
+    <div class="food-grid" style="
+        display:grid;
+        grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+        gap:25px;
+    ">
+        {% for f in foods %}
+        <a href="{% url 'order_food' f.food_id %}" style="text-decoration:none; color:inherit;">
+            <div class="food-card" style="
+                background:#1f1f1f;
+                padding:20px;
+                border-radius:10px;
+                transition:transform .2s;
+            ">
+                <div class="food-name" style="font-size:20px; font-weight:bold;">{{ f.name }}</div>
+                <div class="food-info" style="margin-top:8px; color:#bbb;">{{ f.category }}</div>
+                <div class="food-info" style="margin-top:8px; color:#bbb;">{{ f.price }}원</div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

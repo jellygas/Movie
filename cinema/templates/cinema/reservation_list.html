@@ -1,0 +1,40 @@
+{% extends "cinema/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'cinema/css/reservation_list.css' %}">
+
+<div class="reservation-container">
+
+    <h1 class="title">{{ member.name }}님의 예매 내역</h1>
+
+    {% if reservations %}
+        {% for r in reservations %}
+        <div class="reservation-card">
+
+            <div class="movie-title">{{ r.schedule.movie.title }}</div>
+
+            <div class="info">
+                <p>📅 날짜: {{ r.schedule.date }} {{ r.schedule.time }}</p>
+                <p>🏟 상영관: {{ r.schedule.theater.name }}</p>
+                <p>💺 좌석: {{ r.seat_number }}</p>
+                <p>🕒 예매일자: {{ r.reserved_at }}</p>
+            </div>
+
+            <form action="{% url 'cancel_reservation' r.reservation_id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="cancel-btn">예매 취소</button>
+            </form>
+
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="empty">예매 내역이 없습니다.</p>
+    {% endif %}
+
+    <a href="/" class="home-link">← 홈으로 돌아가기</a>
+
+</div>
+
+{% endblock %}

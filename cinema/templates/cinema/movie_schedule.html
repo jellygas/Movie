@@ -1,0 +1,28 @@
+{% extends "cinema/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'cinema/css/movie_schedule.css' %}">
+
+<div class="schedule-container">
+    <h1 class="title">{{ movie.title }} - 상영 스케줄</h1>
+
+    <div class="schedule-list">
+        {% for s in schedules %}
+            <div class="schedule-card">
+                <div class="schedule-info">
+                    <span class="datetime">{{ s.date }} {{ s.time }}</span>
+                    <span class="theater">상영관: {{ s.theater.name }}</span>
+                </div>
+                <a class="reserve-btn" href="{% url 'reserve' s.schedule_id %}">예매하기</a>
+            </div>
+        {% empty %}
+            <p class="empty">스케줄이 없습니다.</p>
+        {% endfor %}
+    </div>
+
+    <a class="back-btn" href="{% url 'movie_detail' movie.movie_id %}">← 영화 상세로</a>
+</div>
+
+{% endblock %}

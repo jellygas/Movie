@@ -1,0 +1,52 @@
+{% extends "cinema/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'cinema/css/signup.css' %}">
+
+<div class="signup-container">
+    <h1>회원가입</h1>
+
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="input-box">
+            <label>회원 ID</label>
+            <input type="text" name="member_id">
+        </div>
+
+        <div class="input-box">
+            <label>이름</label>
+            <input type="text" name="name">
+        </div>
+
+        <div class="input-box">
+            <label>나이</label>
+            <input type="number" name="age">
+        </div>
+
+        <div class="input-box">
+            <label>전화번호</label>
+            <input type="text" name="phone">
+        </div>
+
+        <div class="input-box">
+            <label>등급</label>
+            <select name="grade">
+                <option value="일반">일반</option>
+                <option value="VIP">VIP</option>
+            </select>
+        </div>
+
+        <button type="submit" class="submit-btn">가입하기</button>
+    </form>
+
+    <a href="/" class="home-link">홈으로 돌아가기</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "cinema/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'cinema/css/order_food.css' %}">
+
+
+<div class="order-container">
+    <h1 class="title">🍿 식음료 주문하기</h1>
+
+
+    <form method="post" class="order-form" id="orderForm">
+        {% csrf_token %}
+
+        <div style="font-size:18px; margin-bottom:18px;">
+            주문할 식음료: <strong>{{ food.name }}</strong> ({{ food.price }}원)
+        </div>
+
+        <label>수량</label>
+        <input type="number" name="quantity" id="quantityInput" value="1" min="1" style="width:80px;">
+
+        <div style="margin-top:15px; font-size:18px;">
+            총 가격: <span id="totalPrice">{{ food.price }}</span>원
+        </div>
+
+        <button type="submit" class="btn-order" style="margin-top:20px;">주문하기</button>
+    </form>
+
+    <a href="/" class="home-link">← 홈으로</a>
+</div>
+
+<script>
+    const price = {{ food.price }};
+    const quantityInput = document.getElementById('quantityInput');
+    const totalPrice = document.getElementById('totalPrice');
+    quantityInput.addEventListener('input', function() {
+        let qty = parseInt(quantityInput.value) || 1;
+        if (qty < 1) qty = 1;
+        totalPrice.textContent = price * qty;
+    });
+</script>
+
+{% endblock %}

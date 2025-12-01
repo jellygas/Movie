@@ -1,0 +1,19 @@
+{% extends "cinema/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'cinema/css/order_done.css' %}">
+
+<div class="order-done-container">
+    <h1 class="title">주문 완료!</h1>
+
+    <div class="box">
+        <p><strong>{{ food.name }}</strong> × {{ quantity }}개</p>
+        <p>총 금액: {{ total_price }}원</p>
+    </div>
+
+    <a class="home-btn" href="/">홈으로</a>
+</div>
+
+{% endblock %}

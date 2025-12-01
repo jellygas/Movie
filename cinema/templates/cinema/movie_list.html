@@ -1,0 +1,20 @@
+{% extends "cinema/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'cinema/css/movie_list.css' %}">
+
+<h1 class="section-title">현재 상영 영화</h1>
+
+<div class="movie-grid">
+    {% for movie in movies %}
+    <a href="{% url 'movie_detail' movie.movie_id %}" class="movie-card">
+        <img src="{{ movie.poster }}" alt="{{ movie.title }} 포스터" class="poster-img">
+        <div class="movie-title">{{ movie.title }}</div>
+        <div class="movie-genre">{{ movie.genre }}</div>
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}
