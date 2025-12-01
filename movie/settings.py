@@ -77,9 +77,15 @@ WSGI_APPLICATION = 'movie.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'railway2',  # 실제 Railway에서 생성된 DB명
+        'USER': 'root',     # Railway에서 제공한 사용자명
+        'PASSWORD': 'wkNrEKQzOTrXieZwhmfofdapzPrKjTlM',
+        'HOST': 'interchange.proxy.rlwy.net',  # Railway에서 제공한 호스트명
+        'PORT': '28736',    # Railway에서 제공한 포트
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
