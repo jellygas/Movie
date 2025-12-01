@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'movie.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway2',  # 실제 Railway에서 생성된 DB명
+        'NAME': 'railway',  # 실제 Railway에서 생성된 DB명
         'USER': 'root',     # Railway에서 제공한 사용자명
         'PASSWORD': 'wkNrEKQzOTrXieZwhmfofdapzPrKjTlM',
         'HOST': 'interchange.proxy.rlwy.net',  # Railway에서 제공한 호스트명
