@@ -3,3 +3,4 @@ pymysql
 dj-database-url
 gunicorn
 whitenoise
+cryptography
