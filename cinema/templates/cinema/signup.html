@@ -14,33 +14,29 @@
 
     <form method="post">
         {% csrf_token %}
-
         <div class="input-box">
-            <label>회원 ID</label>
-            <input type="text" name="member_id">
+            <label>이름</label>
+            <input type="text" name="name" required>
         </div>
 
         <div class="input-box">
-            <label>이름</label>
-            <input type="text" name="name">
+            <label>회원 ID</label>
+            <input type="text" name="member_id" required>
+        </div>
+
+        <div class="input-box">
+            <label>비밀번호</label>
+            <input type="password" name="password" required>
         </div>
 
         <div class="input-box">
             <label>나이</label>
-            <input type="number" name="age">
+            <input type="number" name="age" min="0" required>
         </div>
 
         <div class="input-box">
             <label>전화번호</label>
-            <input type="text" name="phone">
-        </div>
-
-        <div class="input-box">
-            <label>등급</label>
-            <select name="grade">
-                <option value="일반">일반</option>
-                <option value="VIP">VIP</option>
-            </select>
+            <input type="text" name="phone" required>
         </div>
 
         <button type="submit" class="submit-btn">가입하기</button>
