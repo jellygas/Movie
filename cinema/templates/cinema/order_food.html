@@ -31,7 +31,7 @@
 </div>
 
 <script>
-        let price = {{ food.price|default:0 }};
+    const price = {{ food.price|default:0 }};
     const quantityInput = document.getElementById('quantityInput');
     const totalPrice = document.getElementById('totalPrice');
     quantityInput.addEventListener('input', function() {

@@ -23,16 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-!%%oja-j!^^-#fm)6$2t%s+%!prt9(4arp0023fk++5*4)rfp5'
 
-# 환경변수에서 SECRET_KEY, DEBUG, ALLOWED_HOSTS를 읽도록 수정
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-!%%oja-j!^^-#fm)6$2t%s+%!prt9(4arp0023fk++5*4)rfp5')
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
-ALLOWED_HOSTS = [
-    'movie-production-f192.up.railway.app',
-    '.railway.app',
-    'localhost',
-    '127.0.0.1',
-]
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,7 +77,14 @@ WSGI_APPLICATION = 'movie.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600)
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'railway',  # 실제 Railway에서 생성된 DB명
+        'USER': 'root',     # Railway에서 제공한 사용자명
+        'PASSWORD': 'wkNrEKQzOTrXieZwhmfofdapzPrKjTlM',
+        'HOST': 'interchange.proxy.rlwy.net',  # Railway에서 제공한 호스트명
+        'PORT': '28736',    # Railway에서 제공한 포트
+    }
 }
 
 # Password validation
