@@ -175,7 +175,8 @@ def signup(request):
         name = request.POST.get('name')
         age = request.POST.get('age')
         phone = request.POST.get('phone')
-        grade = request.POST.get('grade', '일반')
+        grade = '일반'
+        
 
         # 중복 ID 체크
         if Member.objects.filter(member_id=member_id).exists():
@@ -184,11 +185,11 @@ def signup(request):
             })
 
         Member.objects.create(
-            member_id=member_id,
             name=name,
+            member_id=member_id,
             age=age,
             phone=phone,
-            grade=grade
+            grade='일반'
         )
 
         return render(request, 'cinema/signup_done.html', {
@@ -215,7 +216,7 @@ def login_view(request):
 
         except Member.DoesNotExist:
             return render(request, 'cinema/login.html', {
-                'error': '회원정보가 일치하지 않습니다.'
+                'error': '아이디 또는 비밀번호가 일치하지 않습니다.'
             })
 
     return render(request, 'cinema/login.html')
