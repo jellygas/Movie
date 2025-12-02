@@ -6,6 +6,7 @@ class Member(models.Model):
     age = models.IntegerField(db_column='나이')
     phone = models.CharField(max_length=20, db_column='전화번호')
     grade = models.CharField(max_length=10, default='일반', db_column='등급')
+    password = models.CharField(max_length=100, db_column='비밀번호', null=True, blank=True) 
 
     class Meta:
         db_table = '회원'
